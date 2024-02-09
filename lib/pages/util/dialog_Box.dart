@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/pages/util/my_Button.dart';
+import 'package:todo_app/pages/util/custom_button.dart';
 
 
 
@@ -38,9 +38,9 @@ Row(
      mainAxisAlignment: MainAxisAlignment.end,
 
   children: [
-MyButton(text: 'Save', onPressed: onSave),
+custombutton(text: 'Save', onPressed: onSave),
 SizedBox(width: 8,),
-MyButton(text: 'cancel', onPressed: onCancel)
+custombutton(text: 'cancel', onPressed: onCancel)
 
 
   ],
