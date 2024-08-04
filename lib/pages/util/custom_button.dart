@@ -9,9 +9,14 @@ class custombutton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).colorScheme.secondary,
       onPressed: onPressed,
-      child: Text(text),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: Theme.of(context).colorScheme.background,
+        ),
+      ),
     );
   }
 }

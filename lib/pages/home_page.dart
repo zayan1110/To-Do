@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_app/data/database.dart';
+import 'package:todo_app/pages/setting_page.dart';
 import 'package:todo_app/pages/util/dialog_Box.dart';
 import 'package:todo_app/pages/util/todo_tile.dart';
+import 'package:todo_app/them/them_provider.dart';
 
 class HomPage extends StatefulWidget {
   @override
@@ -66,12 +69,29 @@ class _HomPageState extends State<HomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[200],
+      backgroundColor: Theme.of(context).colorScheme.secondary,
       appBar: AppBar(
-        title: Center(child: Text('TO DO')),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        leading: IconButton(
+          icon: Icon(
+            Icons.settings,
+            color: Theme.of(context).colorScheme.background,
+          ),
+          onPressed: () {
+            Navigator.of(context).pushNamed('/settingPage');
+          },
+        ),
+        title: Center(
+            child: Text(
+          'TO DO             ',
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.background,
+          ),
+        )),
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         onPressed: () => CreatNewTask(context),
         child: Icon(Icons.add),
       ),

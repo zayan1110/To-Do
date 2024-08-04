@@ -10,10 +10,11 @@ class ToDoDataBase {
       ['Make Tutorial', false],
       ['Do Exercise', false],
     ];
+    _myBox.put("TODOLIST", toDoList);
   }
 
   void loadData() {
-    toDoList = _myBox.get("TODOLIST");
+    toDoList = _myBox.get("TODOLIST") ?? [];
   }
 
   void updataDataBase() {
